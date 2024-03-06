@@ -1,12 +1,6 @@
 <?php
-
-    $users = [
-        ['id'=>1, 'name'=>'alamin', 'email'=>'alamin@aiub.edu', 'password'=>'12'],
-        ['id'=>2, 'name'=>'xyz', 'email'=>'alamin@aiub.edu', 'password'=>'12'],
-        ['id'=>3, 'name'=>'abc', 'email'=>'alamin@aiub.edu', 'password'=>'12'],
-        ['id'=>4, 'name'=>'pqr', 'email'=>'alamin@aiub.edu', 'password'=>'12']
-    ];
-
+    require_once('../model/userModel.php');
+    $users = getAllUser()
 ?>
 
 <html>

@@ -1,26 +1,26 @@
 <?php
-    //session_start();
     
+    //include('../model/db.php');
+    //include_once('../model/db.php');    
+    //require('../model/db.php');
+
+    require_once('../model/userModel.php');
+
     $username = $_REQUEST['username'];
     $password = $_REQUEST['password'];
 
     if($username == "" || $password == ""){
         echo "Null username/password";
     }else {
-        $con = mysqli_connect('localhost', 'root', '', 'webtech');
-        $sql = "select * from users where name='{$username}' and password='{$password}'";
-        //echo $sql;
-
-        $result = mysqli_query($con, $sql);
-        $count = mysqli_num_rows($result);
-
-        if($count == 1) {
-            ///$_SESSION['flag'] = 'true'; 
+       
+        $status = login($username, $password);
+        if($status) {
             setcookie('flag', 'true', time()+3600, '/');
             header('location: ../view/home.php');
         }else{
             echo "invalid user";
         }
+
     }
 
 ?>
