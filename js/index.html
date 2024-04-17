@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <title>JS Example</title>
+</head>
+<body>
+        <h1>Hello JS</h1>
+
+        <input type="text" name="username" id="username" onkeyup="username()" />
+        <input type="button" name="click" value="Click" onclick=" username()" />
+
+        <script>
+            //name = 'alamin';
+            //var name = 'alamin';
+            let name = 'alamin';
+            //const name = 'alamin';
+            // let std  = [1, 'alamin', 3.6, 'alamin@aiub.edu'];
+
+            // function sum(a,b){
+            //     return a+b;
+            // }
+
+            // let sum = function (a, b){
+            //     return a+b;
+            // }
+            // let sum = (a, b)=>a+b;
+
+            // for(let a=0; a<10; a++){
+
+            // }
+
+            // if(){
+
+            // }else{
+
+            // }
+
+            //console.log('test');
+                //alert('test');
+                //document.write('Test from JS');
+                function abc(){
+                    let obj = document.getElementsByTagName('h1')[0];
+                    obj.innerHTML = "TEST content";
+                }
+
+                function username(){
+                    let username = document.getElementById('username').value;
+
+                    if(username == ""){
+                       let obj= document.getElementsByTagName('h1')[0];
+                       obj.innerHTML = "Null data";
+                       obj.style.color = "red";
+                    }else{
+                        document.getElementsByTagName('h1')[0].innerHTML = username;
+                    }
+
+                }
+        </script>
+</body>
+</html>
